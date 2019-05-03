@@ -10,7 +10,7 @@ for link in file:
         text = requests.get(url, headers=headers).text
         soup = BeautifulSoup(text, 'html.parser')
         narrow = soup.find('table', attrs={'border':'1'})
-        domain = narrow.findAll('td', attrs={'align':None})
+        domain = narrow.findAll('td', attrs={'align':None})[2:]
         for line in domain:
                 print(line.text)
 
