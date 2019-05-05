@@ -16,8 +16,8 @@ for link in file:
         for line in domain:
         	if line == "":
         		continue
-            open('result.txt', 'a+').write('http://'+line.text+'\n')
-            print('\033[1;32;40m http://'+line.text)
+        	open('result.txt', 'a+').write('http://'+line.text+'\n')
+        	print('\033[1;32;40m http://'+line.text)
 
 
   
