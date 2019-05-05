@@ -12,7 +12,8 @@ for link in file:
         narrow = soup.find('table', attrs={'border':'1'})
         domain = narrow.findAll('td', attrs={'align':None})[2:]
         for line in domain:
-                print(line.text)
+            open('result.txt', 'a+').write('http://'+line.text+'\n')
+            print('\033[1;32;40m http://'+line.text)
 
 
         
