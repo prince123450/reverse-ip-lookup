@@ -10,14 +10,14 @@ for link in file:
         text = requests.get(url, headers=headers).text
         soup = BeautifulSoup(text, 'html.parser')
         narrow = soup.find('table', attrs={'border':'1'})
+        if narrow == None:
+        	continue
         domain = narrow.findAll('td', attrs={'align':None})[2:]
         for line in domain:
+        	if line == "":
+        		continue
             open('result.txt', 'a+').write('http://'+line.text+'\n')
             print('\033[1;32;40m http://'+line.text)
 
 
-        
-    
-
-
-    
+  
